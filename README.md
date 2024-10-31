@@ -25,25 +25,25 @@
 
  - Landing Page
 
- ![alt text](<Screenshot 2024-10-31 202639.png>)
+ ![it seems like the image is unattached to this readme file, don't worry you can still see the design go below and visit the demo link](<Screenshot 2024-10-31 202639.png>)
 
  - Landing Page Bottom View
 
- ![alt text](<Screenshot 2024-10-31 202706.png>)
+ ![it seems like the image is unattached to this readme file, don't worry you can still see the design go below and visit the demo link](<Screenshot 2024-10-31 202706.png>)
 
  - Login Page
 
- ![alt text](<Screenshot 2024-10-31 202721.png>)
+ ![it seems like the image is unattached to this readme file, don't worry you can still see the design go below and visit the demo link](<Screenshot 2024-10-31 202721.png>)
 
  - Registration Page
 
- ![alt text](<Screenshot 2024-10-31 202739.png>)
+ ![it seems like the image is unattached to this readme file, don't worry you can still see the design go below and visit the demo link](<Screenshot 2024-10-31 202739.png>)
 
  - Dashboard Page
 
- ![alt text](<Screenshot 2024-10-31 202758.png>) 
+ ![it seems like the image is unattached to this readme file, don't worry you can still see the design go below and visit the demo link](<Screenshot 2024-10-31 202758.png>) 
 
- ![alt text](<Screenshot 2024-10-31 202814.png>) 
+ ![it seems like the image is unattached to this readme file, don't worry you can still see the design go below and visit the demo link](<Screenshot 2024-10-31 202814.png>) 
 
  - Download Page
 
