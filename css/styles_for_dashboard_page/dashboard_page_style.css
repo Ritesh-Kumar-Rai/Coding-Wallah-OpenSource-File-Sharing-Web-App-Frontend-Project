@@ -1,0 +1,459 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-bg-color: #edf5fe;
+    --light-blue: #03a9f4;
+    --border-color: #0288d147;
+    --inside-card-margin-block: 10px;
+    --inside-card-margin-inline: 20px;
+    --card-icons-font-size: 1.5em;
+
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    background-color: white;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: rgba(0, 0, 0, 0.489); */
+    padding: 1rem 2rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* styling the drag and drop section */
+.drag-drop-section{
+    width: 100%;
+    min-height: 45vh;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 20px 20px #0000002e;
+}
+
+.drag-drop-section .drop-container{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 300px;
+    width: 600px;
+    padding: 1rem 2rem;
+    border: 2px dashed var(--border-color);
+    border-radius: 15px;
+    transition: box-shadow 400ms ease-in-out, background-color 400ms ease-in-out, border-color 400ms ease-in-out;
+    cursor: alias;
+}
+
+.drag-drop-section .drop-container:hover{
+    box-shadow: 0px 20px 20px #0000002e;
+}
+
+.drag-drop-section .drop-container .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 200px;
+
+    position: relative;
+    /* background-color: gold; */
+    
+}
+
+.drag-drop-section .drop-container .image-container > img{
+    position: absolute;
+    width: 100px;
+    transform-origin: center;
+    transition: all 400ms ease-in-out;
+    /* transition: filter 400ms ease-in-out; */
+}
+
+#drag-illus-img-1{
+    z-index: 2;
+}
+#drag-illus-img-2{
+    transform: scale(0.5);
+}
+#drag-illus-img-3{
+    transform: scale(0.5);
+}
+
+.isDragging #drag-illus-img-1{
+    transform: translateY(-5px);
+}
+.isDragging #drag-illus-img-2{
+    transform: translateX(-50px) rotate(-20deg) scale(0.6);
+}
+.isDragging #drag-illus-img-3{
+    transform: translateX(50px) rotate(20deg) scale(0.6);
+}
+
+.isDragging > img{
+    /* filter: drop-shadow(6px 6px 10px black); */
+    filter: drop-shadow(0px 20px 20px #0000002e);
+}
+
+#browseBtn{
+    cursor: pointer;
+    color: #03a9f4;
+    user-select: none;
+}
+
+.upload-input-container{
+    text-align: center;
+}
+
+/* styling the uploaded files section */
+.uploaded-files-access-section{
+    width: 100%;
+    min-height: 45vh;
+    /* background-color: yellow; */
+    margin-top: 2rem;
+    border: none;
+    border-radius: 15px;
+    overflow-x: hidden;
+    box-shadow: 0px 20px 20px 20px #0000002e;
+    position: relative;
+}
+
+
+    /* Placing the background header at z-index 0 */
+.uploaded-files-access-section > .background-heading {
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.388); */
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.uploaded-files-access-section > .background-heading > h1{
+    text-align: center;
+    font-size: 2em;
+    color: #03a8f49d;
+    user-select: none;
+}
+
+
+/* Now styling the cards container */
+.uploaded-files-access-section > .cards-container{
+    position: absolute;
+    /* background-color: rgba(54, 9, 9, 0.361); */
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+
+/* Styling the Card  */
+.card{
+    background-color: #3871ccde;
+    height: 260px;
+    width: 200px;
+    border: none;
+    border-radius: 25px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px #0000002e;
+}
+
+.card i{
+    font-size: var(--card-icons-font-size);
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+}
+
+.card i:focus, .card i:active{
+    outline: 2px solid var(--light-blue);
+}
+
+.card i.close-icon-in-card-header{
+    color: red;
+    background-color: white;
+}
+
+.card > .card-header{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.card > .card-body{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    height: 47%;
+    font-weight: 500;
+    color: white;
+}
+
+.card > .file-size-container{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card > .file-size-container > .file-size{
+    color: white;
+}
+
+.card > .file-size-container > span:nth-child(2) > .ri-close-line{
+    background-color: white;
+    color: black;
+} 
+.card > .file-size-container > span:nth-child(2) > .ri-delete-bin-6-line{
+    background-color: white;
+    color: red;
+} 
+
+.card > .card-footer{
+    background-color: #0040CD;
+    height: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-inline: var(--inside-card-margin-inline);
+}
+
+.card > .card-footer.file-uploaded-color{
+    justify-content: space-around;
+    column-gap: 5px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 128, 0, 0.468);
+}
+
+.card > .card-footer > .progress-bar{
+    height: 4px;
+    width: 100%;
+    background-color: #3871CC;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.card > .card-footer > .progress-bar::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    height: 100%;
+    width: 10%;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Styling the Sidebar*/
+.file-info-sidebar-section{
+    height: 100%;
+    width: 30%;
+    background-color: azure;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    padding: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    box-shadow: none;
+    transition: right 400ms ease-in-out, box-shadow 400ms ease;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+
+.file-info-sidebar-section > .sidebar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: var(--inside-card-margin-block);
+}
+
+.file-info-sidebar-section > .sidebar-header > h3{
+    font-size: 2em;
+}
+.file-info-sidebar-section > .sidebar-header > span{
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+.file-info-sidebar-section > .sidebar-header > span:active,
+.file-info-sidebar-section > .sidebar-header > span:focus
+{
+    border-color: var(--light-blue);
+}
+.file-info-sidebar-section > .sidebar-header > span > i{
+    font-size: 2em;
+}
+
+
+.file-info-sidebar-section > .uploader-file-modify-body{
+    margin-top: 4rem;
+}
+
+.sidebar-form-control{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-form-control > input[type='text']{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1em;
+    color: #525252;
+    filter: drop-shadow(4px 4px 5px gray);
+    transition: all 400ms ease-in-out;
+    background-color: #E5E7EB;
+}
+
+.sidebar-form-control > input[type='text']:hover{
+filter: drop-shadow(8px 8px 5px gray);
+}
+
+.sidebar-form-control > input[type='text']:active,
+.sidebar-form-control > input[type='text']:focus{
+    outline-color: #5368FF;
+    background-color: white;
+    filter: drop-shadow(8px 8px 5px gray);
+}
+
+.btn{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.744);
+}
+
+.file-info-sidebar-section > .uploader-file-modify-body > .link-container{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    
+}
+
+.file-info-sidebar-section > .uploader-file-modify-body > .link-container > .refresh-container{
+    padding-block: var(--inside-card-margin-block);
+    /* background-color: gold; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.refresh-container > i{
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.file-info-sidebar-section > .uploader-file-modify-body > .link-container > .generated-link-container{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.4rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1em;
+    color: #525252;
+    background-color: #E5E7EB;
+}
+
+/* adding scale effect to copy icon by animation */
+.ri-file-copy-line{
+    transition: animation 400ms ease-in-out;
+}
+
+
+@keyframes scale-icon {
+    from{
+        color: #525252;
+        transform: scale(1);   
+    }
+    to{
+        color: black;
+        transform: scale(1.2);
+    }
+}
+
+/* spin animation for refresh icon */
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.file-info-sidebar-section > .uploader-file-modify-body > .link-container > .generated-link-container > input[type='text']{
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.file-info-sidebar-section > .uploader-file-modify-body > .link-container > .generated-link-container > .ri-file-copy-line{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* styling sidebar footer */
+.file-info-sidebar-section > .sidebar-footer{
+    /* margin: var(--inside-card-margin-block) var(--inside-card-margin-inline); */
+    margin-top: 4rem;
+    
+}
+
+.file-info-sidebar-section > .sidebar-footer > .selected-file-info-container{
+    margin: var(--inside-card-margin-block) var(--inside-card-margin-inline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+hr{
+    margin-block: var(--inside-card-margin-block);
+    height: 3px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.683);
+}

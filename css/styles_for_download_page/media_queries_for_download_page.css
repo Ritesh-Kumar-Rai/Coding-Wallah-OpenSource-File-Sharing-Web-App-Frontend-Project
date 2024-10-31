@@ -1,0 +1,83 @@
+
+/* Extra-large screens and up (1280px and up) */
+@media (max-width: 1280px) {
+    /* Add your styles here */
+    .download-main-section {
+        padding-inline: 2rem;
+    }
+}
+
+/* Medium to Large special screen (900px and upto) */
+@media (max-width: 900px) {
+
+    main{
+        padding-inline: 1rem;
+    }
+
+    .download-main-section > .download-container{
+        padding-inline: 0;
+    }
+}
+
+/* Small screens and up (640px and up) */
+@media screen and (max-width: 640px) {
+    /* Add your styles here */
+    
+    
+}
+
+@media screen and (max-height: 600px) {
+    .download-main-section{
+        margin-top: 7rem;
+    }
+}
+
+/* Smaller devices */
+@media screen and (max-width: 510px) {
+    /* Changing the cards container style */
+    .download-main-section{
+        margin-top: 5rem;
+        padding-inline: 0.5rem;
+    }
+
+    .download-main-section > .download-container{
+        padding-inline: 0;
+    }
+
+    .download-main-section > .download-container > .files-section{
+        padding-inline: 0;
+    }
+
+    .download-main-section > .download-container > .files-section > .item{
+        height: auto;
+    }
+
+    /* changing the width of image */
+    .download-main-section > .download-container > .files-section > .item > span{
+        width: 30px;
+    }
+    .download-main-section > .download-container > .files-section > .item > span > img{
+        width: 30px;
+    }
+
+    /* changing the style of item body */
+    .download-main-section > .download-container > .files-section > .item > .item-body {
+        font-size: 10px;
+        padding-inline: 0.5rem;
+        margin-inline: 0.5rem;
+        width: 80%;
+    }
+
+    .download-main-section > .download-container > .files-section > .item > .item-size{
+        width: 20%;
+        font-size: 10px;
+        padding-inline: 0.5rem;
+    }
+
+    /* changing the download btn style */
+    .btn{
+        padding: 0.5rem;
+        font-size: 1em;
+    }
+
+}  

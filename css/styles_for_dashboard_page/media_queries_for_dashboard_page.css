@@ -1,0 +1,26 @@
+ 
+ /* Extra-large screens and up (1280px and up) */
+ @media (max-width: 1280px) {
+  /* Add your styles here */
+  .file-info-sidebar-section{
+    width: 50%;
+  }
+}
+
+  /* Small screens and up (640px and up) */
+@media screen and (max-width: 640px) {
+    /* Add your styles here */
+    .file-info-sidebar-section{
+        width: 100%;
+    }
+
+    
+}
+
+/* Smaller devices */
+@media screen and (max-width: 510px) {
+  /* Changing the cards container style */
+  .uploaded-files-access-section > .cards-container{
+      justify-content: center;
+  }
+}  

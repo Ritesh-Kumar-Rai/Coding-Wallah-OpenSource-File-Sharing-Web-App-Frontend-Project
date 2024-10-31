@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-bg-color: #edf5fe;
+    --light-blue: #03a9f4;
+    --border-color: #0288d147;
+    --section-margin-block: 10px;
+    --section-margin-inline: 20px;
+    --cardsection-icons-font-size: 1.5em;
+
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    /* background-color: lightcyan; */
+    /* background-color: transparent; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.download-main-section{
+    width: 100%;
+    min-height: 50vh;
+    /* background-color: rgba(255, 0, 0, 0.288); */
+    padding: 1rem 5rem;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 20px 20px #0000002e;
+}
+
+/* style for company logo container and logo itself */
+.download-main-section > .company-logo{
+    text-align: center;
+    margin-block: var(--section-margin-block);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    margin-bottom: 4rem;
+}
+.download-main-section > .company-logo > #logo-79{
+    filter: drop-shadow(4px 4px 6px black);
+    cursor: pointer;
+}
+.download-main-section > .company-logo > span{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+/* styling the heading */
+
+h2,h3{
+    margin-block: var(--section-margin-block);
+}
+
+h3#sender-name{
+    font-size: 2em;
+    background-image: linear-gradient( 109.6deg,  rgba(238,58,136,1) 11.2%, rgba(128,162,245,1) 91.1% );
+    font-style: italic;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+/* styling the download container */
+
+.download-main-section > .download-container{
+    margin: var(--section-margin-block) var(--section-margin-inline);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+    padding: 3rem;
+}
+
+/* styling the items section  */
+.download-main-section > .download-container > .files-section{
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 20px 20px #0000002e;
+    padding: 0.8rem;
+}
+
+.download-main-section > .download-container > .files-section > .item{
+    width: 100%;
+    height: 90px;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px gray;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    transition: box-shadow 400ms ease-in-out;
+    cursor: pointer;
+}
+.download-main-section > .download-container > .files-section > .item:hover{
+    box-shadow: 0px 15px 15px gray;
+}
+
+.download-main-section > .download-container > .files-section > .item > span{
+    width: 10%;
+    padding: 0.5rem;
+}
+.download-main-section > .download-container > .files-section > .item > span > img{
+    width: 50px;
+    object-fit: cover;
+}
+
+.download-main-section > .download-container > .files-section > .item > .item-body{
+    width: 90%;
+    padding: 0.5rem;
+    text-align: start;
+    font-weight: 500;
+}
+
+.download-main-section > .download-container > .files-section > .item > .item-size{
+    width: 10%;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+
+
+
+
+
+/* styling the download image */
+.download-main-section > .download-container > img{
+    width: 5rem;
+    object-fit: cover;
+    /* filter: drop-shadow(4px 4px 6px black); */
+}
+
+/* styling the doanload button */
+.btn{
+    padding: 1rem;
+    font-size: 1.2em;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px grey;
+    background-color: rgb(45, 227, 45);
+    color: white;
+    cursor: pointer;
+    transition: box-shadow 400ms ease-in-out, background-color 100ms ease-in-out;
+}
+.btn:active{
+    background-color: lightgreen;
+}
+
+.btn:hover{
+    box-shadow: 8px 8px 15px grey;
+}

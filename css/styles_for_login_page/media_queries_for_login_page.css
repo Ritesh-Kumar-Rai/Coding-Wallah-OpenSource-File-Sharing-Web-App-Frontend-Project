@@ -1,0 +1,105 @@
+/*Breakpoint Prefixes
+sm: — for small screens (640px and up)
+md: — for medium screens (768px and up)
+lg: — for large screens (1024px and up)
+xl: — for extra-large screens (1280px and up)
+2xl: — for extra-extra-large screens (1536px and up)*/
+
+/* Small screens and up (640px and up) */
+@media (min-width: 640px) {
+    /* Add your styles here */
+  }
+  
+  /* Medium screens and up (768px and up) */
+  @media (min-width: 768px) {
+    /* Add your styles here */
+  }
+
+  /* Medium to Large special screen (900px and upto) */
+  @media (min-width: 900px) {
+    .md-n-lg-w-50{
+        width: 50%;
+        /* background-color: red; */
+    }
+    .md-n-lg-h-full{
+        height: 100%;
+    }
+
+    .md-n-lg-flex{
+        display: flex;
+    }
+  }
+
+  /* Large screens and up (1024px and up) */
+  @media (min-width: 1024px) {
+
+    .lg-w-50{
+        width: 50%;
+    }
+    .lg-h-full{
+        min-height: 100%;
+    }
+
+    .lg-flex{
+        display: flex;
+    }
+  }
+
+  @media (max-width:1024px) and (max-height: 790px){
+    .auth-main-container{
+        height: auto;
+    }
+
+    .h-full{
+        height: auto;
+    }
+  }
+  
+  /* Extra-large screens and up (1280px and up) */
+  @media (min-width: 1280px) {
+    /* Add your styles here */
+  }
+  
+  /* Extra-extra-large screens and up (1536px and up) */
+  @media (min-width: 1536px) {
+    /* Add your styles here */
+  }
+  
+
+  /* custom media queries */
+  @media screen and (max-width: 468px) and (max-height: 820px) {
+
+    .form-container{
+        margin: 0;
+        margin-inline: 1rem;
+        height: auto;
+    }
+
+    #company-logo-container{
+        margin: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #main-login-heading{
+        font-size: 1.5rem;
+    }
+
+    .input-control{
+        padding: 0.8rem 1.2rem;
+    }
+
+    .btn{
+        padding: 0.8rem 1.2rem;
+    }
+
+    .btn-full{
+        padding: 0.8rem 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .form-container{
+        margin-inline: 0.5rem;
+    }
+  }

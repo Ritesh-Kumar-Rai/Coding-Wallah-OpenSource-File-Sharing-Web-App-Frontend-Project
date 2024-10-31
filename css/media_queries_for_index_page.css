@@ -1,0 +1,290 @@
+:root{
+    /* variables for responsive media queries */
+    --responsive-padding-for-section: 7rem 2rem;
+    --responsive-padding-for-small-device-section: 7rem 1rem;
+    --responsive-h2-font-size: 3em;
+    --responsive-h3-font-size: 1.5em; 
+    --responsive-p-font-size: 1rem;
+}
+
+/* Making Navbar Responsive in tablet devices or smaller devices */
+@media screen and (max-width: 1368px) {
+    .first-navbar-block{
+        position: absolute;
+        /* top: 75.90px; */
+        top: -250px;
+        width: 300px;
+        right: 20px;
+        /* transition: top 400ms ease-in-out; */
+        
+    }
+    .first-navbar-block > ul{
+        width: 100%;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    .first-navbar-block > ul > li{
+        width: 100%;
+    }
+
+    .navbar-togglers{
+        display: block;
+    }
+
+    #navbar-checkbox:checked ~ .first-navbar-block{
+        top: 78.90px;
+    }
+
+    #navbar-checkbox:checked ~ .navbar-togglers{
+        outline-color: lightblue;
+    }
+    
+    #navbar-checkbox:checked ~ .navbar-togglers .ri-menu-3-line{
+        display: none;
+    }
+    #navbar-checkbox:checked ~ .navbar-togglers .ri-close-large-line{
+        display: block;
+    }
+}
+
+/* Changing in Top Banner and Features Section and Cards to fit good in tablet and phones */
+@media screen and (max-width: 1280px) {
+
+    #top-banner-section-first{
+        height: 75vh;
+    }
+
+    #features-section-second{
+        padding: var(--responsive-padding-for-section);
+    }
+    #features-section-second > h2{
+        margin-block-end: 3rem;
+    }
+
+    #features-list-container{
+        /* background-color: red; */
+        margin-bottom: 4rem;
+    }
+
+    .feature-card{
+        width: 45vw;
+        margin-bottom: 5rem;
+    }
+
+    .feature-card > .feature-info-container > h3{
+        margin-block: 2rem;
+    }
+}
+
+@media screen and (max-width: 1083px){
+    #top-banner-section-first{
+        height: 95vh;
+    }
+
+    #contributors-section > .contributors-banner{
+        padding: var(--responsive-padding-for-section);
+        justify-content: space-between;
+    }
+}
+
+/* Managing the Responsiveness of webpage in a special screen devices which has small width but higher heights like height portrait  */
+@media screen and (min-width: 768px) and (orientation:portrait) {
+
+    /* changing the top banner height */
+    #top-banner-section-first{
+        height: 40vh;
+    }
+
+    /* changing the height or width of feature cards */
+    #features-section-second > h2{
+        font-size: var(--responsive-h2-font-size);
+    }
+
+    .feature-card{
+        width: clamp(43vw, 43vw, 44vw);
+        height: clamp(35vh, 40vh, 40vh);
+        margin-bottom: 100px;
+    }
+    .feature-card > .feature-info-container {
+        padding-right: 0;
+    }
+    .feature-card > .feature-info-container > h3{
+        font-size: var(--responsive-h3-font-size);
+    }
+    .feature-card > .feature-info-container > p{
+        font-size: var(--responsive-p-font-size);
+    }
+
+    /* changing the size of contributions banner fonts */
+    #contributors-section > .contributors-banner{
+        justify-content: space-around;
+    }
+    #contributors-section > .contributors-banner > span{
+        font-size: var(--responsive-h2-font-size);
+    }
+
+}
+
+/* media query especially for ipad air like tablets */
+@media screen and (max-width: 840px) and (max-height:1180px){
+    /* changing the top banner css like adding padding or font size ..*/
+    #top-banner-section-first > .front-banner-area > .heading-n-desc{
+        padding: var(--responsive-padding-for-section);
+        /* margin-top: 2rem; */
+    }
+    #top-banner-section-first h1{
+        font-size: 3em;
+    }
+    #top-banner-section-first p{
+        font-size: 1.2em;
+    }
+}
+
+
+
+@media screen and (max-width: 980px){
+    #nav-header > nav > .second-navbar-block{
+        position: absolute;
+        /* top: -175.90px; */
+        top: 300px;
+        right: -300px;
+        width: 300px;
+        /* right: 20px; */
+        /* transition: all 400ms ease-in-out; */
+    }
+    #navbar-checkbox:checked ~ .second-navbar-block{
+        top: 300px;
+        right: 20px;
+    }
+}
+
+/* Media Queries for mid to small screen devices */
+@media screen and (max-width: 540px){
+
+    #nav-header{
+        width: 100%;
+    }
+
+    /* first change the height of top banner section */
+    #top-banner-section-first{
+        height: 50vh;
+    }
+    #top-banner-section-first > .front-banner-area > .heading-n-desc{
+        height: 100%;
+        width: 100%;
+        margin-top: 2rem;
+        row-gap: 1rem;
+    }
+    #top-banner-section-first h1{
+        font-size: 2.5em;
+    }
+    #top-banner-section-first p{
+        font-size: 1em;
+        /* text-wrap: wrap; */
+        width: 100%;
+    }
+    #top-banner-section-first button{
+        padding: 5px 13px;
+        font-size: 1em;
+    }
+
+    /* changing the features section font size, height and width etc.. */
+    #features-section-second{
+        width: 100%;
+        padding: var(--responsive-padding-for-small-device-section);
+    }
+    #features-section-second > h2{
+        width: 100%;
+        font-size: var(--responsive-h2-font-size);
+    }
+
+    #features-list-container{
+        width: 100%;
+    }
+
+    .feature-card{
+        width: 95%;
+        margin-bottom: 0;
+    }
+
+    .feature-card > .feature-info-container > h3{
+        font-size: var(--responsive-h3-font-size);
+    }
+    .feature-card > .feature-info-container > p{
+        font-size: var(--responsive-p-font-size);
+    }
+
+     /* changing the size of contributions banner fonts */
+     #contributors-section > .contributors-banner{
+        max-width: 100vw;
+        justify-content: space-between;
+        padding: var(--responsive-padding-for-small-device-section);
+    }
+    #contributors-section > .contributors-banner > span{
+        font-size: 2rem;
+    }
+
+    /* Contributors Carousel container css */
+
+    .contributors-cards{
+        width: 100%;
+        padding: var(--responsive-padding-for-small-device-section);
+    }
+
+    footer{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+
+    #features-section-second > h2{
+        margin-block-end: 0;
+    }
+    
+
+    .feature-card{
+        width: 95%;
+        height: 50vh;
+    }
+
+    .feature-card > .feature-image-container{
+        width: 100%;
+        height: 65%;
+    }
+
+    .feature-card > .feature-info-container > h3{
+        margin-block: 1rem;
+    }
+
+    /* changing the contributors banner font width */
+    #contributors-section > .contributors-banner {
+        padding-block: 5rem;
+    }
+    #contributors-section > .contributors-banner > span:nth-child(1) {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    #top-banner-section-first{
+            height: 100vh;
+    }
+
+    #top-banner-section-first > .front-banner-area > .heading-n-desc{
+        row-gap: 2rem;
+    }
+
+    #top-banner-section-first button{
+        padding: 10px 19px;
+        font-size: 1.2em;
+    }
+
+    .feature-card{
+        margin-bottom: 55px;
+    }
+
+
+}

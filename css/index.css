@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+:root{
+    /* variables for general use */
+    --h2-tag-font-size: 4em; 
+    --h3-tag-font-size: 2em;
+    --p-tag-font-size: 1.2rem;
+    --p-font-weight: 400;
+    --p-line-height: 1.75rem;
+    --heading-bold-value: 900;
+    --padding-for-sections: 7rem 3rem; /* Y axis and X axis*/
+}
+
+html,body{
+    height: auto;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main{
+    height: auto;
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+#nav-header{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 20px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    backdrop-filter: blur(5px);
+    /* background-color: lightblue; */
+}
+
+#nav-header #logo-79{
+    filter: drop-shadow(4px 4px 6px black);
+}
+
+#nav-header > nav{
+    width: auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+}
+
+#nav-header > nav > .first-navbar-block > ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 30px;
+}
+
+#inside-nav-ul-tag > li{
+    list-style: none;
+}
+#inside-nav-ul-tag > li > button > a{
+    text-decoration: none;
+    color: white;
+}
+/* increasing the size of github icon */
+.ri-github-line{
+    font-size: var(--p-tag-font-size);
+}
+
+#nav-header > nav > .second-navbar-block {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 15px;
+}
+
+#nav-header > nav  button{
+ padding: 8px 15px;
+ font-weight: 500;
+ font-size: 14px;
+ font-style: normal;
+ border: none;
+ border-radius: 8px;
+ background-color: transparent;
+ cursor: pointer;
+}
+
+#login-btn{
+    color: white;
+}
+
+#nav-header > nav #signup-btn{
+    background-color: white;
+    transition: background-color 100ms ease-in-out;
+}
+
+#nav-header > nav #signup-btn:active{
+    background-color: rgba(255, 255, 255, 0.721);
+}
+
+#nav-header > nav > .child-nav-block{
+    background-color: #161616;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 15px;
+    /* font-size: 16px; */
+    font-weight: 500;
+    transition: all 400ms ease-in-out;
+    filter: drop-shadow(4px 4px 6px black);
+}
+
+#nav-header > nav > .child-nav-block:hover{
+    filter: drop-shadow(8px 8px 6px black);
+}
+
+
+/* css for navbar toggle btns */
+.navbar-togglers{
+    display: none;
+    outline: 2px solid transparent;
+}
+
+
+.navbar-togglers > button > label > .ri-menu-3-line{
+    font-size: var(--p-tag-font-size);
+    color: white;
+    /* padding: 8px 15px; */
+}
+
+.navbar-togglers > button > label > .ri-close-large-line{
+    font-size: var(--p-tag-font-size);
+    color: white;
+    /* padding: 8px 15px; */
+    display: none;
+}
+
+/* CSS for First section of Top Banner 1 */
+#top-banner-section-first{
+    width: 100%;
+    height: 70vh;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    /* background-color: purple; */
+
+}
+#top-banner-section-first > .video-background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+#top-banner-section-first > .video-background > video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+} 
+
+#top-banner-section-first > .front-banner-area{
+    height: 100%;
+    width: 100%;    
+}
+
+#top-banner-section-first > .front-banner-area > .heading-n-desc{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+#top-banner-section-first h1{
+    font-size: 4em;
+    font-style: italic;
+    color: white;
+}
+
+#top-banner-section-first h1 > span{
+    background: linear-gradient(to right, #FF6D4C, #C57CFF, #5368FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+#top-banner-section-first p{
+    font-size: 1.5em;
+    width: 700px;
+    text-align: center;
+    color: white;
+}
+
+#top-banner-section-first button{
+    padding: 10px 19px;
+    font-size: 1.2em;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    background-color: #5368FF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+#top-banner-section-first button:active{
+    background-color: #5367ffa4;
+}
+
+
+/* CSS for Second Section of Features 2*/
+
+#features-section-second{
+    width: 100%;
+    height: auto;
+    /* background-color: aquamarine; */
+    padding: var(--padding-for-sections);
+}
+
+#features-section-second > h2{
+    text-align: center;
+    font-size: var(--h2-tag-font-size);
+    font-weight: var(--heading-bold-value);
+}
+
+#features-list-container{
+    width: 100%;
+    height: auto;
+    /* background-color: plum; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 7rem;
+    flex-wrap: wrap;
+    padding-top: 4rem;
+}
+.feature-card{
+    height: clamp(40vh, 80vh, 80vh);
+    flex-shrink: 0;
+    width: clamp(400px, 38vw ,38vw);
+    border: none;
+    border-radius: 10px;
+    /* border-color: red; */
+}
+
+
+.feature-card > .feature-image-container{
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    transition: transform 400ms ease-in-out;
+    /* background-size: cover; */
+}
+
+.feature-card > .feature-image-container:hover{
+    transform: scale(1.05);
+}
+
+.feature-card > .feature-image-container > img{
+    width: 100%;
+    height: 100%;
+}
+
+.feature-card > .feature-info-container{
+    padding-top: 1rem;
+    padding-right: 2rem;
+}
+.feature-card > .feature-info-container > h3{
+    font-size: var(--h3-tag-font-size);
+    margin-block: 1rem;
+}
+
+.feature-card > .feature-info-container > p{
+    width: 90%;
+    font-size: var(--p-tag-font-size);
+    font-weight: var(--p-font-weight);
+    line-height: var(--p-line-height);
+}
+
+
+/* Contributors Section 3 */
+
+#contributors-section{
+    width: 100%;
+    height: auto;
+    /* no padding */
+}
+
+#contributors-section > .contributors-banner{
+    width: 100%;
+    height: auto;
+    background-color: #161616;
+    padding: var(--padding-for-sections);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+#contributors-section > .contributors-banner > span{
+    font-size: var(--h2-tag-font-size);
+    color: white;
+}
+
+/* Contributors Carousel container css */
+
+.contributors-cards{
+    padding: var(--padding-for-sections);
+}
+
+
+/* CSS for Footer */
+footer{
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #161616;
+    color: azure;
+}

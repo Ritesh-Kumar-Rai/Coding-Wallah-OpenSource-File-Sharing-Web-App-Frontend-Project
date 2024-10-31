@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing App | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles_for_dashboard_page/dashboard_page_style.css">
+    <link rel="stylesheet" href="./css/styles_for_dashboard_page/media_queries_for_dashboard_page.css">
+</head>
+<body>
+    <main>
+        <!-- The File upload Section with Drag and Drop Feature -->
+        <section class="drag-drop-section">
+            <div class="drop-container">
+                <div class="image-container">
+                    <img id="drag-illus-img-1" src="./assets/upload_file_image.png" draggable="false" alt="upload-file-illustration-image1">
+                    <img id="drag-illus-img-2" src="./assets/file_in_gold_color.png" draggable="false" alt="upload-file-illustration-image2">
+                    <img id="drag-illus-img-3" src="./assets/file_in_blue_color.png" draggable="false" alt="upload-file-illustration-image3">
+                </div>
+                <div class="upload-input-container">
+                    <input type="file" name="file-upload-input" id="file-upload-input" hidden>
+                    <div>Drop your Files here or, <span id="browseBtn">Browser</span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- The all Files which are uploaded are loaded here you can better control this using React for Efficiency -->
+        <section class="uploaded-files-access-section">
+            
+            <!-- The background heading which will displayed at center of parent div -->
+            <div class="background-heading">
+                <h1>Access Your Uploaded Files Here</h1>
+            </div>
+
+            <div class="cards-container"> <!-- this is a container where all files will be listed as card form-->
+            
+                <!-- single card starts from here -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span><i class="ri-file-transfer-line"></i></span>
+                            <span onclick="toggleSideBar()"><i class="ri-share-fill"></i></span>
+                        </div>
+                        <div class="card-body">Ramayan.pdf</div>
+                        <div class="file-size-container">
+                            <span class="file-size">1.4Mb</span>
+                            <span><i class="ri-close-line"></i></span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                <!-- single card ends here -->
+
+                <!-- single 2 card starts from here -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span><i class="ri-file-transfer-line"></i></span>
+                            <span onclick="toggleSideBar()"><i class="ri-share-fill"></i></span>
+                        </div>
+                        <div class="card-body">Shrimad Bhagvatam Canto 01.pdf</div>
+                        <div class="file-size-container">
+                            <span class="file-size">20.4Mb</span>
+                            <span><i class="ri-delete-bin-6-line"></i></span>
+                        </div>
+                        <div class="card-footer file-uploaded-color">
+                            <!-- <div class="progress-bar"></div> -->
+                            File Uploaded
+                        </div>
+                    </div>
+                <!-- single 2 card ends here -->
+            </div>
+        </section>
+
+        <!-- The Sidebar, this will open when user clicks on share icon of card  -->
+        <section class="file-info-sidebar-section">
+            <!-- sidebar header -->
+            <div class="sidebar-header">
+                <h3>File Info.</h3>
+                <span onclick="toggleSideBar(true)"><i class="ri-close-large-line"></i></span>
+            </div>
+
+             <!-- sidebar body -->
+            <div class="uploader-file-modify-body">
+                    <form action="#" method="post">
+
+                        <div class="sidebar-form-control">
+                            <label for="uploader-name">Sender's Name:</label>
+                            <input type="text" name="uploader-name" id="uploader-name">
+                        </div>
+                        <button class="btn" type="submit">Save</button>
+                    </form>
+
+                    <div class="link-container">
+                        <div class="refresh-container">
+                            <h3>Copy the Link</h3>
+                            <i onclick="refresh_the_copy_link()" class="ri-reset-right-line" title="refresh the link"></i>
+                        </div>
+                        <div class="generated-link-container">
+                            <input type="text" name="generated-link-input" id="generated-link-input" value="lorem" readonly>
+                            <!-- copy icon -->
+                            <i onclick="copyToClipboard()" class="ri-file-copy-line" title="copy the link"></i>
+                        </div>
+                    </div>
+
+            </div>
+
+            <!-- Sidebar Footer -->
+             <div class="sidebar-footer">
+                <div class="selected-file-info-container">
+                    <!-- selected file are displayed here in a form of card -->
+                    
+                    <!-- card starts here -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span><i class="ri-file-transfer-line"></i></span>
+                            <span><i class="ri-close-line close-icon-in-card-header"></i></span>
+                        </div>
+                        <div class="card-body">Shrimad Bhagvatam Canto 01.pdf</div>
+                        <div class="file-size-container">
+                            <span class="file-size">20.4Mb</span>
+                            <span><i class="ri-delete-bin-6-line"></i></span>
+                        </div>
+                        <!-- card footer contents will change if the file uploaded -->
+                        <div class="card-footer file-uploaded-color" onclick="goToDownloadPage()" style="cursor: pointer;">
+                            <!-- <div class="progress-bar"></div> -->
+                             <span>Download Now</span>
+                            <!-- <i class="ri-download-fill"></i> -->
+                        </div>
+                    </div>
+                     <!-- card ends here -->
+
+                </div>
+
+                <hr />
+
+             </div>
+        </section>
+
+
+    </main>
+</body>
+
+<script>
+
+    const image_container_for_animation = document.querySelector(".image-container");
+    const drag_drop_zone = document.querySelector(".drop-container");
+    const file_upload_input = document.getElementById("file-upload-input");
+    const copy_to_clip_icon = document.querySelector(".ri-file-copy-line");
+    const refresh_icon = document.querySelector(".ri-reset-right-line");
+
+    const maxAllowedSize = 100 * 1024 * 1024; //100mb
+
+    document.querySelector("#browseBtn").addEventListener("click", ()=>{
+        file_upload_input.click();
+    })
+
+    function toggleSideBar(isOpened = false){
+        
+        const sidebarElem = document.querySelector(".file-info-sidebar-section");
+        // console.log("sidebar toggled");
+        
+        if(isOpened){
+            sidebarElem.style.right = "-100%";
+            sidebarElem.style.boxShadow = "0px 0px 100px 20px gray";
+            return;
+        }
+        
+        sidebarElem.style.right = "0%";
+        sidebarElem.style.boxShadow = "0px 0px 100px 20px gray";
+        
+    }
+
+    // copy to clipboard function
+    function copyToClipboard(){
+        const time_for_animation = new Number(400);
+        copy_to_clip_icon.style.animation = `scale-icon ${time_for_animation}ms ease-in-out`;
+        setTimeout(()=>{
+            copy_to_clip_icon.style.animation = "";
+        },time_for_animation+100);
+
+    }
+
+    // function to refresh the copy the link
+    function refresh_the_copy_link(){
+        console.log("refreshing..");
+        
+        const time_for_animation = new Number(1000);
+        console.log(refresh_icon);
+        
+        refresh_icon.style.animation = `spin ${time_for_animation}ms ease-in-out`;
+        refresh_icon.setAttribute("title", "refreshing the link");
+
+        setTimeout(()=>{
+            refresh_icon.style.animation = "";
+            refresh_icon.setAttribute("title", "refresh the link");
+        },time_for_animation+100);
+    }
+
+    // The Temporary function to visit the download page, the onlick added to sidebar card download button
+    function goToDownloadPage(){
+        const url = "./downloadPage.html";
+        window.open(url, "_blank");
+    }
+
+    function uploadFile(){
+        console.log("File is uploading...");
+
+        const files = file_upload_input.files;
+
+        const formData = new FormData();
+        formData.append("file", files[0]);
+
+        const file_size = formData.get('file').size;
+
+        if(file_size > maxAllowedSize){
+            alert("maximum file size is crossed! Failed to Upload");
+            return
+        }
+
+        // Write Your AJAX Code here to upload the file/files ...
+        
+    }
+
+
+    drag_drop_zone.addEventListener("dragover",function(e){
+        // console.log(e);
+        e.preventDefault();
+        drag_drop_zone.style.backgroundColor = "#0288d147";
+        drag_drop_zone.style.borderColor = "#0288d1";
+        image_container_for_animation.classList.add("isDragging");
+    })
+
+    drag_drop_zone.addEventListener("dragleave", function(e){
+        e.preventDefault();
+        drag_drop_zone.style.backgroundColor = "";
+        drag_drop_zone.style.borderColor = "#0288d147";
+        image_container_for_animation.classList.remove("isDragging");
+    });
+
+    drag_drop_zone.addEventListener("drop", function(e){
+        e.preventDefault();
+        // console.warn(e.dataTransfer.files.length, e.dataTransfer.files);
+
+        drag_drop_zone.style.backgroundColor = "";
+        drag_drop_zone.style.borderColor = "#0288d147";
+        image_container_for_animation.classList.remove("isDragging");
+        
+        const dropped_files = e.dataTransfer.files; 
+        // console.warn(dropped_files);
+        
+        
+        if(dropped_files.length){
+            file_upload_input.files = dropped_files;
+            // console.log(file_upload_input.files[0].size);
+
+            if(file_upload_input.files[0]['size'] > maxAllowedSize){
+                alert("maximum limit size crossed! Failed to Upload");
+                return;
+            }
+            uploadFile();
+        }
+        
+    });
+
+    file_upload_input.addEventListener("change", function(e){
+
+        // console.log(file_upload_input.files);
+        
+        uploadFile();
+    });
+</script>
+</html>
